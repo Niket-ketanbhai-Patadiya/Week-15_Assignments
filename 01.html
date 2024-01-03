@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task - 01</title>
+</head>
+<body>
+    <h1>Update Profile Picture</h1>
+    <input onchange="previewFile()" id="fileInput" type="file" >
+    <h2>Your Profile picture</h2>
+    <img src="" height="200px" alt="No Profile Picture">
+
+    <script>
+        function previewFile() {
+        let preview=document.querySelector('img')
+        let file=document.querySelector('input[type=file]').files[0];
+        let reader=new FileReader();
+        
+        reader.onloadend=function(){
+            preview.src=reader.result;
+        }
+
+        if(file){
+            reader.readAsDataURL(file);
+        }else{
+            preview.src="";
+        }
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Logout</title>
+</head>
+<body>
+    <button onclick="Login()">Login</button>
+    <button onclick="Logout()">Logout</button>
+    <h2 id="status"></h2>
+    <script>
+
+        function Login() {
+            localStorage.setItem('authenticated',true) //by Default both values are strings
+            window.location.reload();
+        }
+        function Logout() {
+            localStorage.setItem('authenticated',false) //by Default both values are strings
+            window.location.reload();
+        }
+        const heading=document.getElementById("status");
+        const loginStatus=localStorage.getItem("authenticated");
+        if(loginStatus!="false"){
+            heading.innerHTML="User has Logged In"
+        }else{
+            heading.innerHTML="User has not Logged In";
+        }
+    </script>
+</body>
+</html>

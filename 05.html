@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image</title>
+</head>
+<body id="body">
+    <h1 id="text">Image is hidden</h1>
+    <button onclick="toggle()">Toggle Button</button>
+    <div id="finalImg"></div>
+    <script>
+        const text=document.getElementById("text");
+        function toggle(){
+            const final=document.getElementById("finalImg");
+            const myImg=new Image();
+            myImg.src="PW Course banner.png";
+            document.getElementById("body").appendChild(myImg);
+            text.innerHTML="Image is visible";
+        }
+    </script>
+</body>
+</html>
